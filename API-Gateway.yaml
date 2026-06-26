@@ -19,7 +19,7 @@ spring:
         - id: booking-service
           uri: lb://booking-service
           predicates:
-            - Path=/bookings/**
+            - Path=/bookings/**,/bookings
           filters:
             - RewritePath=/bookings/(?<segment>.*), /api/bookings/$\{segment}
 
